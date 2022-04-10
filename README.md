@@ -1,2 +1,2 @@
 # latest-information-earthquake-update--indonesia
-this package will scarep information in website Indonesian Agency for Meteorology, Climatology, and Geophysics (BMKG)
+this package will scrape information in website Indonesian Agency for Meteorology, Climatology, and Geophysics (BMKG)
