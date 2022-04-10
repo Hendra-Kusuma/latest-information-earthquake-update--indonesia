@@ -18,7 +18,7 @@ setuptools.setup(
     long_description_content_type="text/markdown",
     url="https://github.com/Henzo-Kawaii/latest-information-earthquake-update--indonesia",
     project_urls={
-        "Website": "https://henzogagerz.blogspot.com/",},
+        "Website": "https://henzogagerz.blogspot.com/"},
     classifiers=[
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: GNU General Public License v3 (GPLv3)"
