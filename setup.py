@@ -21,7 +21,7 @@ setuptools.setup(
         "Website": "https://henzogagerz.blogspot.com/",
     },
     classifiers=[
-        "Programming Language :: Python :: 3",
+        "Programming Language :: Python :: 3"
         "Operating System :: OS Independent",
         "Development Status :: 4 - Beta"
 
