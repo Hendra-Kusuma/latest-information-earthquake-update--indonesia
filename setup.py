@@ -10,7 +10,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name="earthquake-in-indonesia",
-    version="0.0.1",
+    version="0.0.2",
     author="Hendra Kusuma",
     author_email="hendrakusuma.vegas@gmail.com",
     description="this package will scrape information  (BMKG)",
@@ -23,7 +23,8 @@ setuptools.setup(
     classifiers=[
         "Programming Language :: Python :: 3",
         "Operating System :: OS Independent",
-        "Development Status :: 5 - Production/Stable"
+        "Development Status :: 4 - Beta"
+
     ],
     # package_dir={"": "src"},
     # packages=setuptools.find_packages(where="src")
