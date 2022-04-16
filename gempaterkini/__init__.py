@@ -3,16 +3,6 @@ from bs4 import BeautifulSoup
 
 
 def ekstraksi_data():
-    """
-    Tanggal: 29 Maret 2022,
-    Waktu: 05:56:49 WIB
-    Magnitudo: 3.7
-    Kedalaman: 1 km
-    Lokasi: LS=3.85  - BT=122.83
-Pusat Gempa: Pusat gempa berada di laut 20 km Timur Laut Soropia, Kab. Konawe
-Dirasakan: Dirasakan (Skala MMI): II - III Kendari, II - III Konawe
-    :return:
-    """
 
     try:
         content = requests.get('https://bmkg.go.id')
