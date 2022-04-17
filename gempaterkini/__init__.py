@@ -1,5 +1,7 @@
 import requests
-from bs4 import BeautifulSoup
+import bs4
+
+description = 'To get the latest information earthwuake in Indonesia'
 
 
 def ekstraksi_data():
@@ -10,7 +12,7 @@ def ekstraksi_data():
         return None
 
     if content.status_code == 200:
-        soup = BeautifulSoup(content.text, 'html.parser')
+        soup = bs4.BeautifulSoup(content.text, 'html.parser')
         result = soup.find('span', {'class': 'waktu'})
         result = result.text.split(', ')
         tanggal = result[0]
@@ -42,17 +44,15 @@ def ekstraksi_data():
 
             i = i + 1
 
-
-
-        hasil = dict()
-        hasil['tanggal'] = tanggal
-        hasil['waktu'] = waktu
-        hasil['magnitudo'] = magnitudo
-        hasil['kedalaman'] = kedalaman
-        hasil['koordinat'] = {'ls': ls, 'bt': bt}
-        hasil['lokasi'] = lokasi
-        hasil['dirasakan'] = dirasakan
-        return hasil
+        result = dict()
+        result['tanggal'] = tanggal
+        result['waktu'] = waktu
+        result['magnitudo'] = magnitudo
+        result['kedalaman'] = kedalaman
+        result['koordinat'] = {'ls': ls, 'bt': bt}
+        result['lokasi'] = lokasi
+        result['dirasakan'] = dirasakan
+        return result
     else:
         return None
 
