@@ -1,7 +1,7 @@
 import requests
 import bs4
 
-description = 'To get the latest information earthwuake in Indonesia'
+description = 'To get the latest earthquake information in Indonesia from BMKG.go.id'
 
 
 def ekstraksi_data():
