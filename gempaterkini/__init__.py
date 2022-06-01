@@ -1,14 +1,34 @@
 import requests
 import bs4
 
+"""
+method = fungsi
+field atribute = variable
+"""
 
-class GempaTerkini:
-    def __init__(self, url):
-        self.description = 'To get the latest earthquake information in Indonesia from BMKG.go.id'
+
+class Bencana:
+    def __init__(self, url, description):
+        self.description = description
         self.result = None
         self.url = url
 
-    def ekstraksi_data(self):
+    def scraping_data(self):
+        pass
+
+    def tampilkan_data(self):
+        pass
+
+    def run(self):
+        self.scraping_data()
+        self.tampilkan_data()
+
+
+class GempaTerkini(Bencana):
+    def __init__(self, url):
+        super(GempaTerkini, self).__init__(url, 'To get the latest earthquake information in Indonesia from BMKG.go.id')
+
+    def scraping_data(self):
 
         try:
             content = requests.get(self.url)
@@ -35,16 +55,16 @@ class GempaTerkini:
             for res in result:
                 if i == 1:
                     magnitudo = res.text
-                elif i == 2 :
+                elif i == 2:
                     kedalaman = res.text
                 elif i == 3:
                     koordinat = res.text.split(' - ')
                     ls = koordinat[0]
                     bt = koordinat[1]
                 elif i == 4:
-                    lokasi == res.text
+                    lokasi = res.text
                 elif i == 5:
-                    dirasakan == res.text
+                    dirasakan = res.text
 
                 i = i + 1
 
@@ -60,7 +80,6 @@ class GempaTerkini:
         else:
             return None
 
-
     def tampilkan_data(self):
         if self.result is None:
             print("tidak bisa menampilkan data terkini")
@@ -74,10 +93,6 @@ class GempaTerkini:
         print(f"Koordinat = LS = {self.result['koordinat']['ls']}, BT={self.result['koordinat']['bt']}")
         print(f"Dirasakan {self.result['dirasakan']}")
 
-    def run(self):
-        self.ekstraksi_data()
-        self.tampilkan_data()
-
 
 # if __name__ == '__main__':
 # print('ini adalah package gempa terkini')
@@ -88,8 +103,8 @@ if __name__ == '__main__':
     print('Deskripsi class Gempa Terkini', gempa_di_indonesia.description)
     gempa_di_indonesia.run()
 
-    gempa_di_dunia = GempaTerkini('https://climate.go.id')
-    print('Deskripsi class Gempa Dunia', gempa_di_dunia.description)
-    gempa_di_dunia.run()
+    # gempa_di_dunia = GempaTerkini('https://bmkg.go.id')
+    # print('Deskripsi class Gempa Dunia', gempa_di_dunia.description)
+    # gempa_di_dunia.run()
     # gempa_di_indonesia.ekstraksi_data()
     # gempa_di_indonesia.tampilkan_data()
