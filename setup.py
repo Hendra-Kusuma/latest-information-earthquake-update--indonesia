@@ -6,7 +6,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name="earthquake-in-indonesia",
-    version="0.0.3",
+    version="0.0.4",
     author="Hendra Kusuma",
     author_email="hendrakusuma.vegas@gmail.com",
     description="This package will help you to retrieve data from the [BMKG]",
